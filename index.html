@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week5 Inclass</title>
+
+    <style>
+        .compass {
+            width: 500px;
+            height: 500px;
+            border: 2px solid red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* I can omit the following code */
+            background-color: rgb(141, 204, 241);
+            position: relative;
+            margin: 100px auto;
+        }
+
+        .point {
+            position: absolute;
+            font-size: 40px;
+            font-weight: bold;
+            color: darkblue;
+        }
+
+
+        .point.N {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        .point.E {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .point.S {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .point.W {
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Center dot for the compass needle */
+        .compass::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            /* Red center to indicate the center of the compass */
+            border-radius: 50%;
+            /* Makes the dot round */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Centers the dot */
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="compass" id="compass">
+        <div class="handle"></div> <!-- This is the compass handle (needle) -->
+    </div>
+
+    <script type="module" src="./data.js"></script>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
